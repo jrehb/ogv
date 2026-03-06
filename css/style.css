@@ -32,7 +32,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ── NAV ── */
+/*  NAV  */
 nav {
     position: sticky;
     top: 0;
@@ -80,7 +80,7 @@ nav ul li a:hover {
     color: var(--cream);
 }
 
-/* ── HERO ── */
+/*  HERO  */
 .hero {
     position: relative;
     background: var(--green-dark);
@@ -213,7 +213,7 @@ nav ul li a:hover {
     box-shadow: 0 8px 28px rgba(74, 124, 52, 0.5);
 }
 
-/* ── SECTIONS ── */
+/*  SECTIONS  */
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -256,7 +256,7 @@ nav ul li a:hover {
     margin-bottom: 1.1rem;
 }
 
-/* ── VERANSTALTUNGEN ── */
+/*  VERANSTALTUNGEN  */
 .event-list {
     list-style: none;
     display: flex;
@@ -292,7 +292,7 @@ nav ul li a:hover {
     margin: 0;
 }
 
-/* ── FEATURE CARDS ── */
+/*  FEATURE CARDS  */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -349,7 +349,7 @@ nav ul li a:hover {
     margin: 0;
 }
 
-/* ── QUOTE BAND ── (auskommentiert – bei Bedarf einkommentieren)
+/*  QUOTE BAND  (auskommentiert – bei Bedarf einkommentieren)
 .quote-band {
     background: var(--green-dark);
     padding: 4rem 2rem;
@@ -379,7 +379,7 @@ nav ul li a:hover {
 }
 */
 
-/* ── SOCIAL ── */
+/*  SOCIAL  */
 .social-section {
     padding: 2rem 0 4rem 0;
     text-align: center;
@@ -431,7 +431,7 @@ nav ul li a:hover {
     color: #fff;
 }
 
-/* ── FOOTER ── */
+/*  FOOTER  */
 footer {
     background: var(--text);
     color: var(--cream);
@@ -458,8 +458,8 @@ footer a:hover {
     padding: 0 0 2rem 0;
 }
 
-/* ── ANIMATIONEN ── */
-@keyframes fadeUp {
+/*  ANIMATIONEN  */
+/* @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
 }
@@ -472,9 +472,9 @@ footer a:hover {
 .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
 .hero-content > *:nth-child(3) { animation-delay: 0.35s; }
 .hero-content > *:nth-child(4) { animation-delay: 0.45s; }
-.hero-content > *:nth-child(5) { animation-delay: 0.55s; }
+.hero-content > *:nth-child(5) { animation-delay: 0.55s; } */
 
-/* ── HAMBURGER ── */
+/*  HAMBURGER  */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -501,7 +501,7 @@ footer a:hover {
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── MOBILE ── */
+/*  MOBILE  */
 @media (max-width: 760px) {
     nav {
         padding: 0 1.25rem;
