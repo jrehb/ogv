@@ -502,7 +502,7 @@ footer a:hover {
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── MOBILE ── */
-@media (max-width: 640px) {
+@media (max-width: 760px) {
     nav {
         padding: 0 1.25rem;
         position: relative;

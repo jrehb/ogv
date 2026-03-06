@@ -15,23 +15,7 @@
   </head>
 
   <body>
-    <nav>
-      <a href="/" class="nav-logo">
-        <img src="/images/logo_1200.png" alt="OGV Logo" style="height: 44px; width: auto" />
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-      <ul id="nav-menu">
-        <li><a href="/">Startseite</a></li>
-        <li><a href="/ueber-uns.html">Über&nbsp;uns</a></li>
-        <li><a href="/veranstaltungen.html">Veranstaltungen</a></li>
-        <li><a href="/zeitungsartikel.html">Zeitungsartikel</a></li>
-        <li><a href="/galerie.html">Galerie</a></li>
-        <li><a href="/kontakt.html">Kontakt</a></li>
-        <li><a href="/impressum.html">Impressum</a></li>
-      </ul>
-    </nav>
+    {% include "nav.html" %}
     <!-- HERO -->
     <header class="hero">
       <div class="hero-bg-pattern"></div>
@@ -53,65 +37,11 @@
 
     <hr class="separator" />
 
-    <!-- SOCIAL -->
-    <section class="social-section">
-      <div class="container">
-        <p class="section-label">Bleib auf dem Laufenden</p>
-        <h2
-          style="
-            font-family: &quot;Playfair Display&quot;, serif;
-            color: var(--green-dark);
-            font-size: 1.8rem;
-          "
-        >
-          Folge uns in den sozialen Medien
-        </h2>
-        <p style="color: var(--text-light); max-width: 480px; margin: 0.75rem auto 0">
-          Aktuelle Neuigkeiten, Fotos und Veranstaltungshinweise findest du auch auf unseren
-          Social-Media-Kanälen.
-        </p>
-        <div class="social-links">
-          <a
-            href="https://www.facebook.com/ogvkloppenheim"
-            target="_blank"
-            class="social-btn facebook"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-            </svg>
-            Facebook
-          </a>
-          <a
-            href="https://www.instagram.com/ogv_kloppenheim/"
-            target="_blank"
-            class="social-btn instagram"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-            Instagram
-          </a>
-        </div>
-      </div>
-    </section>
-    <!-- FOOTER -->
-    <footer>
-      <p>
-        &copy; 2025 Obst- und Gartenbauverein Wiesbaden-Kloppenheim &nbsp;·&nbsp;
-        <a href="/impressum">Impressum</a>
-        <a href="/kontakt">Kontakt</a>
-      </p>
-    </footer>
-    <script src="/js/script.js"></script>
+      <!-- SOCIAL -->
+  {% include "social-media.html" %}
 
+  <!-- FOOTER -->
+  {% include "footer.html" %}
+  <script src="/js/script.js"></script>
   </body>
 </html>

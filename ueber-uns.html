@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Über uns – OGV Kloppenheim</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="shortcut icon" href="/images/logo_icon-32x32.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="/images/logo_icon-32x32.png"
+      type="image/x-icon"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,23 +19,7 @@
   </head>
 
   <body>
-    <nav>
-      <a href="/" class="nav-logo">
-        <img src="/images/logo_1200.png" alt="OGV Logo" style="height: 44px; width: auto" />
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
-      <ul id="nav-menu">
-        <li><a href="/">Startseite</a></li>
-        <li><a href="/ueber-uns.html">Über&nbsp;uns</a></li>
-        <li><a href="/veranstaltungen.html">Veranstaltungen</a></li>
-        <li><a href="/zeitungsartikel.html">Zeitungsartikel</a></li>
-        <li><a href="/galerie.html">Galerie</a></li>
-        <li><a href="/kontakt.html">Kontakt</a></li>
-        <li><a href="/impressum.html">Impressum</a></li>
-      </ul>
-    </nav>
+    {% include "nav.html" %}
 
     <!-- HERO -->
     <header class="hero">
@@ -39,10 +27,20 @@
       <div class="hero-content">
         <h1>Über uns</h1>
         <ul>
-          <li><a href="/ueber-uns/historie.html" class="btn-primary">Historie</a></li>
-          <li><a href="/ueber-uns/vorstand.html" class="btn-primary">Vorstand</a></li>
-          <li><a href="/ueber-uns/satzung.html" class="btn-primary">Satzung</a></li>
-          <li><a href="/ueber-uns/mitglied-werden.html" class="btn-primary">Mitglied&nbsp;werden</a></li>
+          <li>
+            <a href="/ueber-uns/historie.html" class="btn-primary">Historie</a>
+          </li>
+          <li>
+            <a href="/ueber-uns/vorstand.html" class="btn-primary">Vorstand</a>
+          </li>
+          <li>
+            <a href="/ueber-uns/satzung.html" class="btn-primary">Satzung</a>
+          </li>
+          <li>
+            <a href="/ueber-uns/mitglied-werden.html" class="btn-primary"
+              >Mitglied&nbsp;werden</a
+            >
+          </li>
         </ul>
       </div>
     </header>
@@ -51,21 +49,25 @@
     <section class="section">
       <div class="container">
         <p>
-          Der Verein organisiert eine Vielzahl von Veranstaltungen, die für alle Altersgruppen
-          geeignet sind. Dazu gehören der Auftritt bei der Kloppenheimer Kerb mit einem
-          Ebbelwoi-Stand und die Teilnahme am Kerbeumzug mit der Bembelkuh sowie der Rolle der
-          Jugendgruppe „Junges Gemüse" mit Musik im Gepäck, die Unterstützung des Wiesbadener
-          Erntedankfestes am Warmen Damm mit einem Ebbelwoi- Apfelsaft-Stand und dem Anhänger zum
-          beliebten Kinderkeltern, bei dem Kinder den Spaß am Keltern für sich entdecken können.
+          Der Verein organisiert eine Vielzahl von Veranstaltungen, die für alle
+          Altersgruppen geeignet sind. Dazu gehören der Auftritt bei der
+          Kloppenheimer Kerb mit einem Ebbelwoi-Stand und die Teilnahme am
+          Kerbeumzug mit der Bembelkuh sowie der Rolle der Jugendgruppe „Junges
+          Gemüse" mit Musik im Gepäck, die Unterstützung des Wiesbadener
+          Erntedankfestes am Warmen Damm mit einem Ebbelwoi- Apfelsaft-Stand und
+          dem Anhänger zum beliebten Kinderkeltern, bei dem Kinder den Spaß am
+          Keltern für sich entdecken können.
         </p>
         <p>
-          Weiter gibt es das jährliche Kelterfest auf dem Vereinsgelände, bei dem Mitglieder und
-          interessierte Ebbelwoi- bzw. Obst- und Gartenbau-Freunde herzlich willkommen sind.
+          Weiter gibt es das jährliche Kelterfest auf dem Vereinsgelände, bei
+          dem Mitglieder und interessierte Ebbelwoi- bzw. Obst- und
+          Gartenbau-Freunde herzlich willkommen sind.
         </p>
         <p>
-          Zudem werden Schnittkurse und Vorträge zum Thema Gartenbau oder verwandten Inhalten wie
-          beispielsweise „Gefahren aus Küche und Keller" geplant, bei denen interessante
-          Informationen und Tipps vermittelt werden.
+          Zudem werden Schnittkurse und Vorträge zum Thema Gartenbau oder
+          verwandten Inhalten wie beispielsweise „Gefahren aus Küche und Keller"
+          geplant, bei denen interessante Informationen und Tipps vermittelt
+          werden.
         </p>
       </div>
     </section>
@@ -73,43 +75,10 @@
     <hr class="separator" />
 
     <!-- SOCIAL -->
-    <section class="social-section">
-      <div class="container">
-        <p class="section-label">Bleib auf dem Laufenden</p>
-        <h2 style="font-family: 'Playfair Display', serif; color: var(--green-dark); font-size: 1.8rem;">
-          Folge uns in den sozialen Medien
-        </h2>
-        <p style="color: var(--text-light); max-width: 480px; margin: 0.75rem auto 0">
-          Aktuelle Neuigkeiten, Fotos und Veranstaltungshinweise findest du auch auf unseren
-          Social-Media-Kanälen.
-        </p>
-        <div class="social-links">
-          <a href="https://www.facebook.com/ogvkloppenheim" target="_blank" class="social-btn facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-            </svg>
-            Facebook
-          </a>
-          <a href="https://www.instagram.com/ogv_kloppenheim/" target="_blank" class="social-btn instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-            Instagram
-          </a>
-        </div>
-      </div>
-    </section>
+    {% include "social-media.html" %}
 
     <!-- FOOTER -->
-    <footer>
-      <p>
-        &copy; 2025 Obst- und Gartenbauverein Wiesbaden-Kloppenheim &nbsp;·&nbsp;
-        <a href="/impressum">Impressum</a>
-        <a href="/kontakt">Kontakt</a>
-      </p>
-    </footer>
+    {% include "footer.html" %}
     <script src="/js/script.js"></script>
   </body>
 </html>
