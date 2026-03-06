@@ -4,8 +4,8 @@
   "description": "Website für Obst- &amp; Gartenbauverein Kloppenheim",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx @11ty/eleventy --serve",
+    "dev:net": "npx @11ty/eleventy --serve --serveHost=0.0.0.0",
     "build": "npx @11ty/eleventy"
   },
   "repository": {

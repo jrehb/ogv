@@ -45,7 +45,7 @@ Lokalen Entwicklungsserver starten (mit Hot-Reload):
 npm run dev
 ```
 
-Die Website ist dann unter [http://localhost:8080](http://localhost:8080) erreichbar.
+Die Website ist dann unter [http://localhost:8080](http://localhost:8080) erreichbar, sowie im lokalen Netzwerk unter der Ip-Adresse des gehosteten Gerätes. Ist letzeres unerwünschtes verhalten, so muss die eleventy.config.mjs geändert werden.
 
 ---
 
