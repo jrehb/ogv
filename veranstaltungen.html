@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Veranstaltungen – OGV Kloppenheim</title>
+    <title>Veranstaltungen - OGV Kloppenheim</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/veranstaltungen.css">
     <link rel="shortcut icon" href="/images/logo_icon-32x32.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +16,7 @@
   </head>
 
   <body>
-  {% include "nav.html" %}
+    {% include "nav.html" %}
 
     <!-- HERO -->
     <header class="hero">
@@ -26,104 +27,33 @@
     </header>
 
     <!-- VERANSTALTUNGEN -->
-    <section class="section">
+<section class="section">
       <div class="container">
-        <ul class="event-list">
 
-          <li class="event-item">
-            <p class="event-date">19.03.2026</p>
-            <p class="event-title">Jahreshauptversammlung des OGV</p>
-            <p class="event-desc">19:00 Uhr</p>
-          </li>
+        <div class="event-filter">
+          <button id="togglePast" class="btn-toggle-past">Vergangene Termine anzeigen</button>
+        </div>
 
-          <li class="event-item">
-            <p class="event-date">28.03.2026</p>
-            <p class="event-title">Pflegeaktion des Streuobstkreis Wiesbaden</p>
-            <p class="event-desc">
-              Pflegeaktion des Streuobstkreises Wiesbaden e.V. im Sortengarten Medenbach mit
-              interessierten Mitgliedern. Hilfe ist erwünscht! Beginn 9.00 Uhr, Sortengarten des
-              Streuobstkreises Wiesbaden e.V., an der Wildsachsener Straße/BAB 3. Anmeldung unter
-              E-Mail: <a href="mailto:ullikaiser@web.de">ullikaiser@web.de</a>
-            </p>
-          </li>
-
-          <li class="event-item">
-            <p class="event-date">11.04.2026</p>
-            <p class="event-title">Pflegeaktion des Streuobstkreis Wiesbaden</p>
-            <p class="event-desc">
-              Pflegeaktionen des Streuobstkreises Wiesbaden e.V. (wir teilen uns auf):<br />
-              - auf der Streuobstwiese der Firma Syracom AG an der Freudenberger Straße. Beginn 10.00 Uhr<br />
-              - auf der Streuobstwiese der Diltheyschule an der Georg-August-Straße. Beginn 9.30 Uhr<br />
-              Hilfe ist erwünscht! Anmeldung unter E-Mail:
-              <a href="mailto:ullikaiser@web.de">ullikaiser@web.de</a>
-            </p>
-          </li>
-
-          <li class="event-item">
-            <p class="event-date">26.04.2026</p>
-            <p class="event-title">4. OGV-Kaffeekränzchen</p>
-            <p class="event-desc">15:00 Uhr</p>
-          </li>
-
-          <li class="event-item">
-            <p class="event-date">09.06.2026</p>
-            <p class="event-title">Vortrag/Lesung Nina Dittmann</p>
-            <p class="event-desc">
-              Lesung von Nina Dittmann aus ihrem Buch „Dem Herzen gefolgt - Unser Traum vom Leben
-              auf dem eigenen Hof" im Gemeindehaus um 19:00 Uhr.
-            </p>
-          </li>
-
-          <li class="event-item">
-            <p class="event-date">13.06.2026</p>
-            <p class="event-title">20. Apfelweinprobe im Ländchen</p>
-            <p class="event-desc">
-              Verkostung und Prämierung regionaler Apfelweine. Dazu gibt es natürlich etwas
-              regional-typisches zu essen. Ein Unkostenbeitrag wird erhoben. Eine Anmeldung ist
-              dringend erforderlich unter
-              <a href="mailto:Apfelweinprobe@gmx.de">Apfelweinprobe@gmx.de</a>.
-              Im Innenhof in Engels Hofreite, In der Hofreite 21a, Wiesbaden-Medenbach. Beginn: 17.00 Uhr.
-            </p>
-          </li>
-
-          <li class="event-item">
-            <p class="event-date">23.08.2026</p>
-            <p class="event-title">Sommerfest der Mitglieder des Streuobstkreis Wiesbaden</p>
-            <p class="event-desc">
-              Beginn: 12.00 Uhr. Gegrilltes, Salate, Apfelweine, Kaffee und Kuchen.
-              Kuchenspenden werden dankend entgegengenommen. Eine Anmeldung ist dringend erforderlich
-              unter <a href="tel:+4915118407904">0151-18407904</a> oder per E-Mail:
-              <a href="mailto:ullikaiser@web.de">ullikaiser@web.de</a>
-            </p>
-          </li>
-
-          <li class="event-item">
-            <p class="event-date">28.08. - 30.08.2026</p>
-            <p class="event-title">Kloppenheimer Kerb</p>
-          </li>
-
-          <li class="event-item">
-            <p class="event-date">26.09. - 27.09.2026</p>
-            <p class="event-title">Erntedankfest Wiesbaden</p>
-          </li>
-
-          <li class="event-item">
-            <p class="event-date">25.10.2026</p>
-            <p class="event-title">5. OGV-Kaffeekränzchen</p>
-            <p class="event-desc">15:00 Uhr</p>
-          </li>
-
+        <ul class="event-list" id="eventList">
+          <!-- wird per JS befüllt -->
         </ul>
+
+        <p id="noEvents" class="event-empty" style="display:none;">
+          Aktuell sind keine bevorstehenden Veranstaltungen geplant.
+        </p>
+
       </div>
     </section>
 
     <hr class="separator" />
 
-  <!-- SOCIAL -->
-  {% include "social-media.html" %}
+    <!-- SOCIAL -->
+    {% include "social-media.html" %}
 
-  <!-- FOOTER -->
-  {% include "footer.html" %}
-  <script src="/js/script.js"></script>
+    <!-- FOOTER -->
+    {% include "footer.html" %}
+
+    <script src="/js/script.js"></script>
+    <script src="/js/veranstaltungen.js"></script>
   </body>
 </html>
