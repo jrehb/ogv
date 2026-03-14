@@ -30,6 +30,9 @@ body {
     color: var(--text);
     line-height: 1.7;
     overflow-x: hidden;
+        display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /*  NAV  */
@@ -321,6 +324,7 @@ nav ul li a:hover {
 /*  SOCIAL  */
 .social-section {
     padding: 2rem 0 4rem 0;
+    margin-top: auto;
     text-align: center;
 }
 
