@@ -453,7 +453,7 @@ footer a:hover {
 }
 
 /*  MOBILE  */
-@media (max-width: 920px) {
+@media (max-width: 800px) {
     nav {
         padding: 0 1.25rem;
         position: relative;
@@ -507,4 +507,4 @@ footer a:hover {
         text-align: center;
     }
 
-}
+} 
