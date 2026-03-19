@@ -1,0 +1,22 @@
+/* Playfair Display – selbst gehostet (DSGVO-konform)
+   Dateien liegen unter: /fonts/playfair/
+   Quelle: Google Fonts (OFL-Lizenz)
+*/
+
+/* Normal (alle Gewichte 400–900 via Variable Font) */
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/playfair/PlayfairDisplay-VariableFont_wght.woff2") format("woff2-variations");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Kursiv (alle Gewichte 400–900 via Variable Font) */
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/playfair/PlayfairDisplay-Italic-VariableFont_wght.woff2") format("woff2-variations");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}

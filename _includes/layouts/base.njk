@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title if title else "Obst- und Gartenbauverein - Kloppenheim" }}</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    {% if pageCss %}
+    <link rel="stylesheet" href="/css/{{ pageCss }}" />
+    {% endif %}
+    <link rel="shortcut icon" href="/images/logo_icon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/fonts/playfair/playfair-display.css" />
+  </head>
+  <body>
+    {% include "nav.html" %}
+
+    {{ content | safe }}
+
+    {% include "footer.html" %}
+    <script src="/js/script.js"></script>
+    {% if pageJs %}
+    <script src="/js/{{ pageJs }}"></script>
+    {% endif %}
+  </body>
+</html>
