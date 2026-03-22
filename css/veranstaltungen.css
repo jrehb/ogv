@@ -89,3 +89,7 @@
     color: var(--green-mid);
     background: rgba(125, 179, 86, 0.08);
 }
+
+.text-bold {
+    font-weight: 400;
+}
