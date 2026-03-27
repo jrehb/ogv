@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.ogv-kloppenheim\.de [NC]
+RewriteRule (.*) http://www.ogv-kloppenheim.de/$1 [R=301,L]
+
+# Zugriff von außen verbieten
+<Files "*.php">
+  Require all denied
+</Files>

@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+title: "Kontakt"
+pageCss: kontakt.css
+pageJs: kontakt.js
+---
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <h1>Kontakt</h1>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container">
+    <h2>Verantworlich</h2>
+    <p>
+      Obst- und Gartenbauverein Wiesbaden-Kloppenheim <br />
+      Thomaeweg 16 <br />
+      65207 Wiesbaden-Kloppenheim
+    </p>
+    <h2>Kontakt</h2>
+    <p>
+      Sven Siegel <br />
+      1. Vorsitzender <br />
+      Thomaeweg 16 <br />
+      65207 Wiesbaden-Kloppenheim <br />
+      <a href="mailto:info@ogv-kloppenheim.de">info@ogv-kloppenheim.de</a>
+    </p>
+    <h2>Nachricht schreiben</h2>
+    <form action="/kontakt/senden.php" method="POST">
+      <div class="form-group">
+        <label for="name">Ihr Name</label>
+        <input type="text" id="name" name="name" required placeholder="Max Mustermann" />
+      </div>
+      <div class="form-group">
+        <label for="email">Ihre E-Mail-Adresse</label>
+        <input type="email" id="email" name="email" required placeholder="max@beispiel.de" />
+      </div>
+      <div class="form-group">
+        <label for="nachricht">Nachricht</label>
+        <textarea
+          id="nachricht"
+          name="nachricht"
+          rows="6"
+          required
+          placeholder="Ihre Nachricht..."
+        ></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Nachricht senden</button>
+      <div id="formular-status"></div>
+    </form>
+  </div>
+</section>
+
+<hr class="separator" />
+
+<!-- SOCIAL -->
+{% include "social-media.html" %}
+
+<!-- FOOTER -->
