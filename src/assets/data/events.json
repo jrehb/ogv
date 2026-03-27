@@ -24,10 +24,17 @@
     "beschreibung": "Pflegeaktionen des Streuobstkreises Wiesbaden e.V. (wir teilen uns auf):<br><span class='text-bold'> - auf der Streuobstwiese der Firma Syracom AG an der Freudenberger Strasse. Beginn 10.00 Uhr </span><br>Hilfe ist erwünscht! Anmeldung unter E-Mail: <a href=\"mailto:ullikaiser@web.de\">ullikaiser@web.de</a>"
   },
   {
+    "datum": "2026-04-14",
+    "uhrzeit": "19:00",
+    "titel": "OGV-Stammtisch",
+    "beschreibung": "Ab 19:00 Uhr im Restaurant Poseidon"
+  },
+  {
     "datum": "2026-04-26",
     "uhrzeit": "15:00",
     "titel": "4. OGV-Kaffeekränzchen",
-    "beschreibung": "15:00 Uhr"
+    "beschreibung": "15:00 Uhr",
+    "filepath" : "/files/test.jpeg"
   },
   {
     "datum": "2026-06-09",

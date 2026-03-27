@@ -10,6 +10,9 @@
     {% endif %}
     <link rel="shortcut icon" href="/images/logo_icon-32x32.png" type="image/x-icon" />
     <link rel="stylesheet" href="/fonts/playfair/playfair-display.css" />
+    {% if metaDescr %}
+    <meta name="description" content="{{metaDescr}}">
+    {% endif %}
   </head>
   <body>
     {% include "nav.html" %}
