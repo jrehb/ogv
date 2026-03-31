@@ -413,6 +413,13 @@ footer a:hover {
     padding: 0 0 2rem 0;
 }
 
+/* FALLOBST */
+
+.full-img {
+    max-width: inherit;
+    width: 100%;
+}
+
 /*  ANIMATIONEN  */
 /* @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
