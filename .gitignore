@@ -2,3 +2,4 @@ node_modules/
 _site/
 .DS_Store
 src/config/mail_config.php
+logs/
