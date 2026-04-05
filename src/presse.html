@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: "Presse"
+pageCss: presse.css
+pageJs: presse.js
+---
+
+<header class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <h1>Presse</h1>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+
+    <div class="artikel-filter">
+      <div class="jahr-select-wrapper">
+        <select id="jahrSelect" class="jahr-select" aria-label="Jahr auswählen">
+          <!-- wird per JS befüllt -->
+        </select>
+        <svg class="jahr-select-arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </div>
+
+    <ul class="artikel-list" id="artikelList"></ul>
+
+    <p id="noArtikel" class="artikel-empty" style="display:none;">
+      Für dieses Jahr sind keine Artikel vorhanden.
+    </p>
+
+  </div>
+</section>
+
+<hr class="separator" />
+{% include "social-media.html" %}
