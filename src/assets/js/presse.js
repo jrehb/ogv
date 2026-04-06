@@ -6,9 +6,7 @@
   const BILD_EXTS = ["jpg", "jpeg", "png", "webp", "gif"];
   const PDF_EXTS  = ["pdf"];
 
-  function extOf(pfad) {
-    return pfad ? pfad.split(".").pop().toLowerCase() : "";
-  }
+  function extOf(pfad) { return pfad ? pfad.split(".").pop().toLowerCase() : ""; }
   function istBild(pfad) { return BILD_EXTS.includes(extOf(pfad)); }
   function istPdf(pfad)  { return PDF_EXTS.includes(extOf(pfad)); }
 
@@ -17,7 +15,6 @@
     return d.toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" });
   }
 
-  // ---- Icon SVGs ----
   const ICON_PDF = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
       fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -42,21 +39,33 @@
     </a>`;
   }
 
-  // Sammelt alle Bilder eines Artikels (bild, bild1, bild2, … oder bilder-Array)
-  function bilderAus(a) {
-    const bilder = [];
-    if (Array.isArray(a.bilder)) {
-      a.bilder.forEach(b => bilder.push({ pfad: b.pfad || b, label: b.label }));
-    } else {
-      // bild, bild1, bild2, bild3 …
-      if (a.bild) bilder.push({ pfad: a.bild, label: a.bildLabel });
-      for (let i = 1; i <= 9; i++) {
-        const key = `bild${i}`;
-        if (a[key]) bilder.push({ pfad: a[key], label: a[`bild${i}Label`] });
-      }
+function bilderAus(a) {
+    const begleit = [];
+    for (let i = 1; i <= 9; i++) {
+      if (a[`bild${i}`]) begleit.push({ pfad: a[`bild${i}`], label: a[`bild${i}Label`] });
     }
-    return bilder.filter(b => b.pfad);
+    return {
+      haupt: a.bild ? { pfad: a.bild, label: a.bildLabel } : null,
+      begleit,
+    };
   }
+
+  // ---- URL-Handling ----
+
+  function jahrAusUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const j = parseInt(params.get("jahr"), 10);
+    return isNaN(j) ? null : j;
+  }
+
+  function jahrInUrl(jahr) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("jahr", jahr);
+    // pushState: URL ändert sich, aber kein Seitenreload
+    window.history.pushState({ jahr }, "", url.toString());
+  }
+
+  // ---- Render ----
 
   function renderArtikel(artikel, jahr) {
     list.innerHTML = "";
@@ -75,46 +84,36 @@
       const li = document.createElement("li");
       li.className = "artikel-item";
 
-      // --- Kopf: Datum + Titel ---
-      const kopf = `
+      const desc = a.beschreibung ? `<p class="artikel-desc">${a.beschreibung}</p>` : "";
+      // const hauptBtn = a.pfad ? downloadButton(a.pfad, a.buttonname) : "";
+      const hauptBtn = false; // Zeile löschen und obere Zeile auskommentieren für Downloadbutton
+      const hauptBtnWrap = hauptBtn ? `<div class="artikel-actions">${hauptBtn}</div>` : "";
+
+      const { haupt, begleit } = bilderAus(a);
+
+      // Hauptbild: groß, vollbreit
+      const hauptBildHtml = haupt ? `
+        <div class="artikel-bilder artikel-bilder--haupt">
+          <a href="${haupt.pfad}" target="_blank" rel="noopener noreferrer">
+            <img src="${haupt.pfad}" alt="${haupt.label || a.titel}" class="artikel-bild" loading="lazy" />
+          </a>
+        </div>` : "";
+
+      // Begleitbilder: klein, nebeneinander
+      const begleitHtml = begleit.length ? `
+        <div class="artikel-bilder artikel-bilder--grid">
+          ${begleit.map(b => `
+            <a href="${b.pfad}" target="_blank" rel="noopener noreferrer">
+              <img src="${b.pfad}" alt="${b.label || a.titel}" class="artikel-bild" loading="lazy" />
+            </a>`).join("")}
+        </div>` : "";
+
+      li.innerHTML = `
         <p class="artikel-date">${formatDatum(a.datum)}</p>
         <p class="artikel-title">${a.titel}</p>
+        ${desc}${hauptBtnWrap}${hauptBildHtml}${begleitHtml}
       `;
-
-      // --- Text ---
-      const desc = a.beschreibung
-        ? `<p class="artikel-desc">${a.beschreibung}</p>`
-        : "";
-
-      // --- Einzelne Haupt-Datei (PDF oder einzelnes Bild ohne bild1/bild2) ---
-      // "pfad" = Hauptdatei, immer als Download-Button angeboten
-      const hauptBtn = a.pfad ? downloadButton(a.pfad, a.buttonname) : "";
-      const hauptBtnWrap = hauptBtn
-        ? `<div class="artikel-actions">${hauptBtn}</div>`
-        : "";
-
-      // --- Bilder (bild / bild1 / bild2 / bilder[]) ---
-      const bilder = bilderAus(a);
-      let bilderHtml = "";
-      if (bilder.length === 1) {
-        // Einzelbild: vollbreit
-        bilderHtml = `
-          <div class="artikel-bilder artikel-bilder--single">
-            <a href="${bilder[0].pfad}" target="_blank" rel="noopener noreferrer">
-              <img src="${bilder[0].pfad}" alt="${bilder[0].label || a.titel}" class="artikel-bild" loading="lazy" />
-            </a>
-          </div>`;
-      } else if (bilder.length > 1) {
-        // Mehrere Bilder: nebeneinander
-        const imgs = bilder.map(b => `
-          <a href="${b.pfad}" target="_blank" rel="noopener noreferrer">
-            <img src="${b.pfad}" alt="${b.label || a.titel}" class="artikel-bild" loading="lazy" />
-          </a>`).join("");
-        bilderHtml = `<div class="artikel-bilder artikel-bilder--grid">${imgs}</div>`;
-      }
-
-      li.innerHTML = kopf + desc + hauptBtnWrap + bilderHtml;
-      list.appendChild(li);
+      list.appendChild(li)
     });
   }
 
@@ -127,18 +126,41 @@
       opt.textContent = j;
       jahrSelect.appendChild(opt);
     });
-    return jahre[0];
+    return jahre;
   }
+
+  // ---- Init ----
 
   fetch("/data/presse.json")
     .then(r => r.json())
     .then(artikel => {
       if (!artikel.length) { noArtikel.style.display = ""; return; }
-      const startJahr = befuelleJahrSelect(artikel);
+
+      const jahre = befuelleJahrSelect(artikel);
+
+      // Jahr aus URL nehmen, sonst aktuellstes
+      const jahrAusParam = jahrAusUrl();
+      const startJahr = (jahrAusParam && jahre.includes(jahrAusParam))
+        ? jahrAusParam
+        : jahre[0];
+
       jahrSelect.value = startJahr;
       renderArtikel(artikel, startJahr);
+
+      // Beim ersten Laden URL setzen falls noch kein Parameter da
+      if (!jahrAusUrl()) jahrInUrl(startJahr);
+
       jahrSelect.addEventListener("change", () => {
-        renderArtikel(artikel, Number(jahrSelect.value));
+        const gewähltesJahr = Number(jahrSelect.value);
+        jahrInUrl(gewähltesJahr);
+        renderArtikel(artikel, gewähltesJahr);
+      });
+
+      // Browser-Zurück/Vor-Buttons funktionieren auch
+      window.addEventListener("popstate", (e) => {
+        const j = e.state?.jahr || jahrAusUrl() || jahre[0];
+        jahrSelect.value = j;
+        renderArtikel(artikel, j);
       });
     })
     .catch(err => {
