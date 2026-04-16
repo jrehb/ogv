@@ -1,7 +1,10 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+$debug = false; // ← auf true setzen zum Debuggen
 
+if ($debug) {
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+}
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: /kontakt/');
     exit;
@@ -17,6 +20,12 @@ $config = require __DIR__ . '/../config/mail_config.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
+// Wenn Honeypot ausgefüllt → Bot
+if (!empty($_POST['website'])) {
+    header('Location: /kontakt/?erfolg=1'); // Bot denkt es hat geklappt
+    exit;
+}
 
 // POST-Daten bereinigen
 $name      = trim(strip_tags($_POST['name'] ?? ''));
@@ -40,10 +49,11 @@ try {
     $mail->isSMTP();
     $mail->Host       = $config['host'];
     $mail->SMTPAuth   = true;
+    $mail->AuthType   = 'LOGIN';
     $mail->Username   = $config['username'];
     $mail->Password   = $config['password'];
-    $mail->SMTPSecure = 'tls';
-    $mail->Port       = $config['port'];
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = '587';
 
     $mail->setFrom($config['from'], 'OGV Kloppenheim'); // Absender-Adresse + Name
     $mail->addReplyTo($email, $name);                   // Nutzerantwort
@@ -64,7 +74,11 @@ try {
 
 } catch (Exception $e) {
     // Fehler ebenfalls loggen
-    file_put_contents(__DIR__ . '/mail_debug.log', date('Y-m-d H:i:s') . ' [Exception] ' . $mail->ErrorInfo . "\n", FILE_APPEND);
+    if ($debug) {
+        file_put_contents(__DIR__ . '/mail_debug.log', date('Y-m-d H:i:s') . ' [Exception] ' . $mail->ErrorInfo . "\n", FILE_APPEND);
+        die('Fehler: ' . $mail->ErrorInfo);
+    }
+    
     header('Location: /kontakt/?fehler=server');
 }
 
