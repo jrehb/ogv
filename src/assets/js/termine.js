@@ -87,17 +87,35 @@
     URL.revokeObjectURL(url);
   }
 
-  function pdfDownloadButton(filePath, buttonName) {
-    if (!filePath) return "";
-    const label = buttonName || "PDF-Download";
-    return `<a class="btn-pdf" href="${filePath}" target="_blank" rel="noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="12" y1="12" x2="12" y2="18"></line>
-            <line x1="9" y1="15" x2="15" y2="15"></line>
-        </svg>
-        ${label}
+  const BILD_EXTS = ["jpg", "jpeg", "png", "webp", "gif"];
+  const PDF_EXTS  = ["pdf"];
+
+  function extOf(pfad) { return pfad ? pfad.split(".").pop().toLowerCase() : ""; }
+  function istBild(pfad) { return BILD_EXTS.includes(extOf(pfad)); }
+  function istPdf(pfad)  { return PDF_EXTS.includes(extOf(pfad)); }
+
+  const ICON_PDF = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+    <polyline points="14 2 14 8 20 8"></polyline>
+    <line x1="12" y1="12" x2="12" y2="18"></line>
+    <line x1="9" y1="15" x2="15" y2="15"></line>
+  </svg>`;
+
+  const ICON_IMG = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+    <polyline points="21 15 16 10 5 21"></polyline>
+  </svg>`;
+
+  function downloadButton(pfad, label) {
+    if (!pfad) return "";
+    const icon = istPdf(pfad) ? ICON_PDF : ICON_IMG;
+    const fallbackLabel = istPdf(pfad) ? "PDF öffnen" : "Bild öffnen";
+    return `<a class="btn-pdf" href="${pfad}" target="_blank" rel="noopener noreferrer">
+
+        ${icon}${label || fallbackLabel}
     </a>`;
   }
 
@@ -149,7 +167,7 @@
     </div>
     <p class="event-title">${event.titel}</p>
     ${desc}
-    ${pdfDownloadButton(event.filepath, event.buttonname)}
+    ${downloadButton(event.filepath, event.buttonname)}
 `;
       if (!zeigeVergangene) {
         li.querySelector(".btn-ical").addEventListener("click", () => icalDownload(event));
