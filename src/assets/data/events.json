@@ -27,14 +27,17 @@
     "datum": "2026-04-14",
     "uhrzeit": "19:00",
     "titel": "OGV-Stammtisch",
-    "beschreibung": "Ab 19:00 Uhr im Restaurant Poseidon"
+    "beschreibung": "Ab 19:00 Uhr im Restaurant Poseidon",
+    "filepath" : "/files/termine/2026-04-08_stammtisch_flyer.png",
+    "buttonname" : "Flyer öffnen"
   },
   {
     "datum": "2026-04-26",
     "uhrzeit": "15:00",
     "titel": "4. OGV-Kaffeekränzchen",
     "beschreibung": "15:00 Uhr",
-    "filepath" : "/files/termine/kaffeekraenzje_04.jpeg"
+    "filepath" : "/files/termine/kaffeekraenzje_04.jpeg",
+    "buttonname" : "Flyer öffnen"
   },
   {
     "datum": "2026-06-09",

@@ -34,9 +34,11 @@ body {
     color: var(--text);
     line-height: 1.7;
     overflow-x: hidden;
-        display: flex;
-    flex-direction: column;
+    /* Lösung für den Footer: */
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
     min-height: 100vh;
+    margin: 0;
 }
 
 /*  NAV  */
@@ -207,6 +209,7 @@ nav ul li a:hover {
     text-decoration: none;
     padding: 0.75rem 2rem;
     border-radius: 30px;
+    border: none;
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.06em;
@@ -229,7 +232,7 @@ nav ul li a:hover {
 }
 
 .section {
-    padding: 5rem 0 2rem 0;
+    padding: 3rem 0 2rem 0;
 }
 
 .section-label {
