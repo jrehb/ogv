@@ -13,10 +13,22 @@
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://www.ogv-kloppenheim.de/veranstaltungen/</loc>
+        <loc>https://www.ogv-kloppenheim.de/termine/</loc>
         <lastmod>2026-03-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.ogv-kloppenheim.de/presse/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://www.ogv-kloppenheim.de/fallobst/</loc>
+        <lastmod>2026-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
     </url>
     <url>
         <loc>https://www.ogv-kloppenheim.de/ueber-uns/mitglied-werden/</loc>

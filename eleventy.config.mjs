@@ -23,10 +23,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/files": "files"  });
   eleventyConfig.addPassthroughCopy({ "src/assets/fonts": "fonts"  });
   eleventyConfig.addPassthroughCopy({ "src/assets/data": "data" });
-  eleventyConfig.addPassthroughCopy("sitemap.xml");
-  eleventyConfig.addPassthroughCopy("robots.txt");
+  eleventyConfig.addPassthroughCopy("src/sitemap.xml");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.addPassthroughCopy("src/kontakt/senden.php");
-    eleventyConfig.addPassthroughCopy("src/config/mail_config.php");
+  eleventyConfig.addPassthroughCopy("src/config/mail_config.php");
 
   return {
     dir: {

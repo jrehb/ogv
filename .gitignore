@@ -1,5 +1,7 @@
 node_modules/
 _site/
 .DS_Store
+.vscode
 src/config/mail_config.php
 logs/
+*.log
