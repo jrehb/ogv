@@ -28,15 +28,15 @@
     "uhrzeit": "19:00",
     "titel": "OGV-Stammtisch",
     "beschreibung": "Ab 19:00 Uhr im Restaurant Poseidon",
-    "filepath" : "/files/termine/2026-04-08_stammtisch_flyer.png",
+    "filepath" : "/files/termine/2026-04-08_stammtisch_flyer.webp",
     "buttonname" : "Flyer öffnen"
   },
   {
     "datum": "2026-04-26",
     "uhrzeit": "15:00",
     "titel": "4. OGV-Kaffeekränzchen",
-    "beschreibung": "15:00 Uhr",
-    "filepath" : "/files/termine/kaffeekraenzje_04.jpeg",
+    "beschreibung": "15:00 Uhr in der Sängerklause, Kuchenspenden sind wie immer herzlich wilkommen! Bitte tragt euch unter dem Link ein falls ihr einen Kuchen mitbringt (<a href=\"https://www.tinyurl.com/mr8f5p7k\" target=\"_blank\">tinyurl.com/mr8f5p7k</a>).",
+    "filepath" : "/files/termine/kaffeekraenzje_04.webp",
     "buttonname" : "Flyer öffnen"
   },
   {
@@ -73,7 +73,7 @@
     "datum": "2026-10-25",
     "uhrzeit": "15:00",
     "titel": "5. OGV-Kaffeekränzchen",
-    "beschreibung": "15:00 Uhr"
+    "beschreibung": "Weitere Infos folgen"
   }
   
 ]
