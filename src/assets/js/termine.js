@@ -177,7 +177,7 @@
     });
   }
 
-  fetch("/data/events.json")
+  fetch("/data/termine.json")
     .then((r) => r.json())
     .then((events) => {
       renderEvents(events);
