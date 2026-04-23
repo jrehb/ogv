@@ -157,7 +157,8 @@ section .btn-artikel {
 
 /* Klick auf Bild: leichter Hover-Effekt */
 .artikel-bilder a {
-  display: block;
+  display: inline-block;
+  justify-self: center;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;

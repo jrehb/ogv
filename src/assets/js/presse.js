@@ -89,6 +89,8 @@ function bilderAus(a) {
       const hauptBtn = false; // Zeile löschen und obere Zeile auskommentieren für Downloadbutton
       const hauptBtnWrap = hauptBtn ? `<div class="artikel-actions">${hauptBtn}</div>` : "";
 
+      const eaDesc = a.eaAusgabe ? `<p>Quelle: <a href="https://www.erbenheimer-anzeiger.de" target="_blank">Erbenheimer Anzeiger</a>, Ausgabe vom ${formatDatum(a.eaAusgabe)}</p>` : "";
+
       const { haupt, begleit } = bilderAus(a);
 
       // Hauptbild: groß, vollbreit
@@ -111,7 +113,7 @@ function bilderAus(a) {
       li.innerHTML = `
         <p class="artikel-date">${formatDatum(a.datum)}</p>
         <p class="artikel-title">${a.titel}</p>
-        ${desc}${hauptBtnWrap}${hauptBildHtml}${begleitHtml}
+        ${desc}${hauptBtnWrap}${hauptBildHtml}${eaDesc} ${begleitHtml}
       `;
       list.appendChild(li)
     });
