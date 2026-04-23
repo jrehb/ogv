@@ -96,7 +96,7 @@ function bilderAus(a) {
       // Hauptbild: groß, vollbreit
       const hauptBildHtml = haupt ? `
         <div class="artikel-bilder artikel-bilder--haupt">
-          <a href="${haupt.pfad}" target="_blank" rel="noopener noreferrer">
+          <a href="${haupt.pfad}" target="_self" rel="noopener noreferrer">
             <img src="${haupt.pfad}" alt="${haupt.label || a.titel}" class="artikel-bild" loading="lazy" />
           </a>
         </div>` : "";
