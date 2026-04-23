@@ -121,6 +121,14 @@ section .btn-artikel {
   transform: translateY(-1px);
 }
 
+.flex {
+  display: flex;
+}
+
+.div-pad {
+  padding-bottom: 2rem;
+}
+
 /* BILDER */
 .artikel-bilder {
   margin-top: 1rem;
@@ -160,6 +168,7 @@ section .btn-artikel {
   display: inline-block;
   justify-self: center;
   border-radius: 10px;
+  height: fit-content;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -170,6 +179,9 @@ section .btn-artikel {
 }
 
 @media (max-width: 600px) {
+  .flex {
+    display: block;
+  }
   .artikel-bilder--grid {
     grid-template-columns: 1fr;
   }
