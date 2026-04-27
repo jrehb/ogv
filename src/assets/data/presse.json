@@ -10,7 +10,7 @@
   {
     "datum": "2025-05-07",
     "titel": "Vortrag beim OGV Kloppenheim",
-    "bild": "/files/presse/2025-05-07_vortrag_klimawandel_im_garten_mai-2025.webp",
+    "bild": "/files/presse/2025-05-07_artikel_klimawandel_im_garten_mai-2025.webp",
     "eaAusgabe" : "2025-05-07",
     "pfad": "/files/presse/2025-05-07_ea_klimawandel_im_garten.pdf"
   },
@@ -41,7 +41,7 @@
     "datum": "2024-06-18",
     "titel": "Öffentlicher Vortrag \"Naturnahe Gartengestaltung und Artenvielfalt\"",
     "pfad": "/files/presse/2024-06-18_vortrag_naturnahe_gartengestaltung.pdf",
-    "bild": "/files/presse/2024-06-21_artikel_vortrag_02.webp",
+    "bild": "/files/presse/2024-06-21_artikel_vortrag_gallikowski_02.webp",
     "eaAusgabe" : "2024-06-21",
     "bild1": "/files/presse/2024-06-18_vortrag_gallikowski_01.webp",
     "bild2": "/files/presse/2024-06-18_vortrag_gallikowski_02.webp"
@@ -55,7 +55,7 @@
   {
     "datum" : "2024-03-15",
     "titel" : "Obst- und Gartenbauverein vergrößert Vorstand",
-    "bild" : "/files/presse/2024-05-15_ogv_neuer_vorstand_ea.webp",
+    "bild" : "/files/presse/2024-05-15_artikel_ogv_neuer_vorstand_ea.webp",
     "eaAusgabe" : "2024-03-15"
   },
   {
@@ -67,31 +67,31 @@
   {
     "datum": "2023-03-03",
     "titel": "Obst- und Gartenbauverein Ebbelwoi schenkt ein",
-    "bild": "/files/presse/2023-03-03_ogv_heisser_aeppler.webp",
+    "bild": "/files/presse/2023-03-03_artikel_ogv_heisser_aeppler.webp",
     "eaAusgabe" : "2023-03-03"
   },
   {
     "datum": "2023-04-06",
     "titel": "Obst- und Gartenbauverein auf aufsteigendem Ast",
-    "bild": "/files/presse/2023-04-06_jhv_ogv.webp", 
+    "bild": "/files/presse/2023-04-06_artikel_ogv_jhv.webp", 
     "eaAusgabe" : "2023-04-06"
   },
   {
     "datum": "2023-09-29",
     "titel": "Kinderkeltern auf dem Erntedankfest mit dem OGV",
-    "bild": "/files/presse/2023-09-29_ogv_auf_erntedank.webp",
+    "bild": "/files/presse/2023-09-29_artikel_ogv_auf_erntedank.webp",
     "eaAusgabe" : "2023-09-29"
   },
   {
     "datum": "2023-10-06",
     "titel": "Feuchtfröhliches Kelterfest des OGV",
-    "bild": "/files/presse/2023-10-06_ogv_kelterfest.webp", 
+    "bild": "/files/presse/2023-10-06_artikel_ogv_kelterfest.webp", 
     "eaAusgabe" : "2023-10-06"
   },
   {
     "datum": "2023-10-27",
     "titel": "\"Gefahren aus Küche und Keller\" große Resonanz bei Vortrag des OGV",
-    "bild": "/files/presse/2023-10-27_ogv_vortrag_gefahr.webp", 
+    "bild": "/files/presse/2023-10-27_artikel_ogv_vortrag_gefahr.webp", 
     "eaAusgabe" : "2023-10-27"
   }
 ]
