@@ -28,6 +28,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/.htaccess");
   eleventyConfig.addPassthroughCopy("src/kontakt/senden.php");
   eleventyConfig.addPassthroughCopy("src/config/mail_config.php");
+  eleventyConfig.addPassthroughCopy("src/mail");
 
   return {
     dir: {
