@@ -16,3 +16,10 @@ RewriteRule ^ https://www.ogv-kloppenheim.de%{REQUEST_URI} [L,R=301]
         Require all denied
     </LimitExcept>
 </Files>
+
+# challenge.php nur per GET erlauben
+<Files "challenge.php">
+    <LimitExcept GET>
+        Require all denied
+    </LimitExcept>
+</Files>

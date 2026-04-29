@@ -1,7 +1,9 @@
 ---
 layout: layouts/base.njk
 title: "Kontakt"
-pageCss: kontakt.css
+pageCss: 
+- kontakt.css
+- altcha.css
 pageJs: kontakt.js
 ---
 
@@ -48,15 +50,20 @@ pageJs: kontakt.js
       </div>
       <div class="form-group">
         <label for="nachricht">Nachricht</label>
-        <textarea id="nachricht" name="nachricht" rows="6" required placeholder="Ihre Nachricht..."></textarea>
+        <textarea id="nachricht" name="nachricht" rows="6"required placeholder="Ihre Nachricht..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="altcha-widget">Capatcha</label>
+        <altcha-widget id="altcha-widget" challenge="/kontakt/challenge.php" language="de" hide-footer hide-logo theme="ogv" name="altcha" auto="off"></altcha-widget>
       </div>
       <button type="submit" class="btn-primary">Nachricht senden</button>
-      <!-- <div id="formular-status"></div> -->
     </form>
   </div>
 </section>
 
 <hr class="separator" />
+<script src="/js/altcha.min.js"></script>
+<script src="/js/de.js"></script>
 
 <!-- SOCIAL -->
 {% include "social-media.html" %}

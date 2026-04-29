@@ -1,5 +1,44 @@
 <?php
 $debug = false; // ← auf true setzen zum Debuggen
+/*
+    Altcha-Payload
+*/
+define('ALTCHA_HMAC_KEY', 'da03fee65e614a0a0dfb63655342c52e3c67971ac42fc1bdaa47fef56a3d9049'); // Gleicher Key!
+
+function verifyAltcha(string $payload): bool {
+    $decoded = json_decode(base64_decode($payload), true);
+    if (!$decoded) return false;
+
+    $algorithm  = $decoded['algorithm'] ?? '';
+    $challenge  = $decoded['challenge'] ?? '';
+    $number     = $decoded['number'] ?? 0;
+    $salt       = $decoded['salt'] ?? '';
+    $signature  = $decoded['signature'] ?? '';
+
+    // Ablaufzeit prüfen
+    parse_str(parse_url($salt, PHP_URL_QUERY) ?? '', $params);
+    if (isset($params['expires']) && (int)$params['expires'] < time()) {
+        return false; // Challenge abgelaufen
+    }
+
+    // Challenge nachrechnen
+    $expectedChallenge = hash('sha256', $salt . $number);
+    if (!hash_equals($expectedChallenge, $challenge)) return false;
+
+    // Signatur prüfen
+    $expectedSignature = hash_hmac('sha256', $challenge, ALTCHA_HMAC_KEY);
+    return hash_equals($expectedSignature, $signature);
+}
+
+$altchaPayload = $_POST['altcha'] ?? '';
+if (!verifyAltcha($altchaPayload)) {
+    http_response_code(400);
+    die('ALTCHA-Verifizierung fehlgeschlagen.');
+}
+
+/*
+    E-Mail Versand
+*/
 
 if ($debug) {
     ini_set('display_errors', 1);
@@ -73,12 +112,11 @@ try {
     header('Location: /kontakt/?erfolg=1');
 
 } catch (Exception $e) {
-    // Fehler ebenfalls loggen
     if ($debug) {
-        file_put_contents(__DIR__ . '/mail_debug.log', date('Y-m-d H:i:s') . ' [Exception] ' . $mail->ErrorInfo . "\n", FILE_APPEND);
-        die('Fehler: ' . $mail->ErrorInfo);
+        $info = isset($mail) ? $mail->ErrorInfo : $e->getMessage();
+        file_put_contents(__DIR__ . '/mail_debug.log', date('Y-m-d H:i:s') . ' [Exception] ' . $info . "\n", FILE_APPEND);
+        die('Fehler: ' . $info);
     }
-    
     header('Location: /kontakt/?fehler=server');
 }
 

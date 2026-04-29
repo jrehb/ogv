@@ -1,0 +1,31 @@
+altcha-widget[theme='ogv'] {
+    --altcha-checkbox-border-width: 1px;
+    
+    /* Hintergrund: cream wie deine Inputs */
+    --altcha-color-base: oklch(95.5% 0.012 95);
+    --altcha-color-base-content: oklch(20% 0.03 120);
+    
+    /* Neutral: helles Grün-Grau für Border und Switch */
+    --altcha-color-neutral: oklch(75% 0.04 130);
+    --altcha-color-neutral-content: oklch(30% 0.05 130);
+    
+    /* Primary: --green-mid #4a7c34 */
+    --altcha-color-primary: oklch(49% 0.13 138);
+    --altcha-color-primary-content: oklch(98% 0.01 90);
+    
+    /* Success: --green-light #7db356 */
+    --altcha-color-success: oklch(65% 0.14 138);
+    --altcha-color-success-content: oklch(98% 0.01 90);
+    
+    /* Border: wie deine form inputs */
+    --altcha-border-color: rgba(45, 74, 30, 0.2);
+    --altcha-border-radius: 8px;
+    
+    /* Input-Bereich */
+    --altcha-input-background-color: oklch(95.5% 0.012 95);
+    --altcha-input-color: oklch(18% 0.02 100);
+    
+    --altcha-switch-background-color: var(--altcha-color-neutral);
+    --altcha-checkbox-border-color: rgba(45, 74, 30, 0.35);
+    --altcha-spinner-color: var(--altcha-color-base-content);
+}
