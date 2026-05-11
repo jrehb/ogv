@@ -3,6 +3,7 @@
     max-width: inherit;
     width: 100%;
     height: auto;
+    margin-bottom: 1rem;
     border-radius: 16px;
     display: block;
 }
