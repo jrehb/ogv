@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
   const widget = document.querySelector('altcha-widget');
   if (widget) {
     widget.configure({
-      auto: 'onload',
+      auto: 'off',
       hideFooter: true,
       hideLogo: false,
       minDuration : 1000
