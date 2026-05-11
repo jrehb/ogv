@@ -6,13 +6,20 @@
     <title>{{ title if title else "Obst- und Gartenbauverein - Kloppenheim" }}</title>
     <link rel="stylesheet" href="/css/style.css" />
     {% if pageCss %}
-    <link rel="stylesheet" href="/css/{{ pageCss }}" />
+      {% if pageCss is string %}
+        <link rel="stylesheet" href="/css/{{ pageCss }}" />
+      {% else %}
+        {% for css in pageCss %}
+          <link rel="stylesheet" href="/css/{{ css }}" />
+        {% endfor %}
+      {% endif %}
     {% endif %}
     <link rel="shortcut icon" href="/images/logo_icon-32x32.png" type="image/x-icon" />
     <link rel="stylesheet" href="/fonts/playfair/playfair-display.css" />
     {% if metaDescr %}
     <meta name="description" content="{{metaDescr}}">
     {% endif %}
+    <script async defer src="/js/altcha.min.js" type="module"></script>
   </head>
   <body>
     {% include "nav.html" %}
