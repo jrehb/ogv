@@ -3,7 +3,7 @@ import htmlmin from "html-minifier-terser";
 export default function (eleventyConfig) {
 
   eleventyConfig.setServerOptions({
-    host: "0.0.0.0"
+    host: process.env.ELEVENTY_HOST || "localhost"
   });
 
   eleventyConfig.addTransform("htmlmin", async (content, outputPath) => {

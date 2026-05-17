@@ -4,8 +4,8 @@
   "description": "Website für Obst- &amp; Gartenbauverein Kloppenheim",
   "main": "index.js",
   "scripts": {
-    "dev": "eleventy --serve --port=8080",
-    "dev:net": "eleventy --serve --serveHost=0.0.0.0",
+    "dev": "set ELEVENTY_HOST=localhost && eleventy --serve --port=8080",
+    "dev-net": "set ELEVENTY_HOST=0.0.0.0 && eleventy --serve --port=8080",
     "clean": "rimraf _site",
     "build": "npm run clean && eleventy"
   },
