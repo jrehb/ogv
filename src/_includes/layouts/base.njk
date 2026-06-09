@@ -29,7 +29,13 @@
     {% include "footer.html" %}
     <script src="/js/script.js"></script>
     {% if pageJs %}
-    <script src="/js/{{ pageJs }}"></script>
+      {% if pageJs is string %}
+        <script src="/js/{{ pageJs }}"></script>
+      {% else %}
+        {% for js in pageJs %}
+          <script src="/js/{{ js }}"></script>
+        {% endfor %}
+      {% endif %}
     {% endif %}
   </body>
 </html>
