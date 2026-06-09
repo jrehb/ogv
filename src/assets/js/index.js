@@ -15,10 +15,17 @@
       const valid = banners
         .map((b) => ({
           ...b,
-          time: new Date(b.datum).setHours(0, 0, 0, 0),
+          startTime: b.startDatum
+            ? new Date(b.startDatum).setHours(0, 0, 0, 0)
+            : -Infinity,
+          endTime: new Date(b.datum).setHours(0, 0, 0, 0),
         }))
-        .filter((b) => b.time >= today.getTime())
-        .sort((a, b) => a.time - b.time);
+        .filter(
+          (b) =>
+            today.getTime() >= b.startTime &&
+            today.getTime() <= b.endTime
+        )
+        .sort((a, b) => a.endTime - b.endTime);
 
       const nextBanner = valid[0];
 

@@ -8,7 +8,7 @@
   {
     "datum": "2026-03-16",
     "titel": "JHV des OGV Kloppenheim",
-    "bild" : "/files/presse/2026-03-27_jahreshauptversammlung_des_ogv_Kloppenheim_(ea).webp",
+    "bild" : "/files/presse/2026-03-27_jahreshauptversammlung_des_ogv_kloppenheim_(ea).webp",
     "bild1": "/files/presse/2026-03-16_jhv_01.webp",
     "bild2": "/files/presse/2026-03-16_jhv_09.webp",
     "pfad": "/files/presse/2026-03-16_jhv_ogv.pdf",
@@ -106,5 +106,78 @@
     "titel": "\"Gefahren aus Küche und Keller\" große Resonanz bei Vortrag des OGV",
     "bild": "/files/presse/2023-10-27_artikel_ogv_vortrag_gefahr.webp", 
     "eaAusgabe" : "2023-10-27"
+  }, 
+  {
+    "datum" : "2022-01-07",
+    "titel" : "Neuer Vorstand",
+    "bild" : "/files/presse/2022-01-07_zeitungsauschnitt_neuer_vorstand_ogv.webp", 
+    "eaAusgabe" : "2022-01-07"
+  },
+  {
+    "datum" : "2007-09-22",
+    "titel" : "Kleine Bauern meist chancenlos",
+    "bild" : "/files/presse/2007-09-22_ogv_kleine_bauern_meist_chancenlos_(ea).webp", 
+    "eaAusgabe" : "2007-09-22"
+  },
+  {
+    "datum" : "2005-04-02",
+    "titel" : "75 Jahre OGV",
+    "bild" : "/files/presse/2005-04-02_75_jahre_ogv_(fotokopie).webp", 
+    "eaAusgabe" : "2005-04-02"
+  }, 
+  {
+    "datum" : "2000-11-26",
+    "titel" : "Aktion schöneres Kloppenheim",
+    "bild" : "/files/presse/2000-11-26_aktion_schöneres_kloppenheim_2000.webp", 
+    "eaAusgabe" : "2000-11-26"
+  },
+  {
+    "datum" : "2000-11-01",
+    "titel" : "Paten für Blumenkübel gesucht",
+    "bild" : "/files/presse/2000-11_paten_für_blumenkübel_gesucht.webp",
+    "eaAusgabe" : "2000-11-01"
+  }, 
+  {
+    "datum" : "2000-08-04",
+    "titel" : "Der OGV erkundet die EXPO 2000 (Teil 1)",
+    "bild" : "/files/presse/2000-08-04_der_ogv_erkundete_die_expo_2000.webp",
+    "eaAusgabe" : "2000-08-04"
+  },
+    {
+    "datum" : "2000-08-04",
+    "titel" : "Der OGV erkundet die EXPO 2000 (Teil 2)",
+    "bild" : "/files/presse/2000-08-04_die_fahrt_ins_blaue.webp",
+    "eaAusgabe" : "2000-08-04"
+  },
+  {
+    "datum" : "2000-05-06",
+    "titel" : "Große Tombola zum Blütenfest",
+    "bild" : "/files/presse/2000-05-06_große_tombola_zum_blütenfest.webp",
+    "eaAusgabe" : "2000-05-06"
+  },
+  {
+    "datum" : "2000-05-06",
+    "titel" : "Blütenfest in Kloppenheim",
+    "bild" : "/files/presse/2000-05-06_blütenfest_in_kloppenheim.webp",
+     "eaAusgabe" : "2000-05-06"
+  }, 
+  {
+    "datum" : "2000-03-03",
+    "titel" : "Schnittkurs des OGVs", 
+    "bild" : "/files/presse/2000-03-03_schnittkurs_des_ogv-kloppenheim.webp",
+    "eaAusgabe" : "2000-03-03"
+  }, 
+  {
+    "datum" : "1998-05-23",
+    "titel" : "Die Sonne lachte beim Blütenfest", 
+    "bild" : "/files/presse/1998-05-23_die_sonne_lachte_beim_blütenfest.webp",
+    "eaAusgabe" : "1998-05-23"
+  }, 
+  {
+    "datum" : "1998-05-23",
+    "titel" : "Blütenfest mit Eierlaufen und Gartenzwerg", 
+    "bild" : "/files/presse/1998-05-23_blütenfest_mit_eierlaufen_und_gartenzwerg.webp",
+    "eaAusgabe" : "1998-05-23"
+
   }
 ]

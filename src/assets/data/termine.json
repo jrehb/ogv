@@ -42,8 +42,10 @@
   {
     "datum": "2026-06-09",
     "uhrzeit": "19:00",
-    "titel": "Vortrag/Lesung Nina Dittmann",
-    "beschreibung": "Lesung von Nina Dittmann aus ihrem Buch \"Dem Herzen gefolgt - Unser Traum vom Leben auf dem eigenen Hof\" im Gemeindehaus um 19:00 Uhr."
+    "titel": "Vortrag von Nina &amp; Detlef Dittmann",
+    "beschreibung": "Multimedialer Vortrag mit Nina und Detlef Dittmann über Permakultur, naturnahe Lebensräume und nachhaltige Lebensweisen im Alltag und auf kleinen Flächen. Am Dienstag, 9. Juni 2026 um 19 Uhr (Einlass ab 18:30) im Gemeindehaus Kloppenheim (Pfarrstraße 6) - mit Bildern, praktischen Einblicken sowie anschließendem Austausch bei Äppler und Plausch.",
+    "filepath" : "/files/termine/2026-05-11_vortrag_dittmann_poster.webp",
+    "buttonname" : "Flyer öffnen"
   },
   {
     "datum": "2026-06-13",
@@ -67,7 +69,8 @@
     "datum": "2026-08-28",
     "datum_ende": "2026-08-30",
     "datum_anzeige": "28.08. - 30.08.2026",
-    "titel": "Kloppenheimer Kerb"
+    "titel": "Kloppenheimer Kerb", 
+    "beschreibung" : "Wie jedes Jahr sind wir bei der Kloppenheimer Kerb dabei! Ihr findet unsere Stände oben rechts vor dem Dorfbrunnen. Wie immer gibt es unseren Äppler und Flammenkuchen (auch vegetarisch), zur Kinderbelustigung am Samstag bieten wir Waffeln an. Wir freuen uns auf euren Besuch!"
   },
   {
     "datum": "2026-09-26",
