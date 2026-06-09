@@ -126,7 +126,7 @@ nav ul li a:hover {
     opacity: 0.08;
     background: var(--green-light);
     pointer-events: none;
-} 
+}
 
 .hero-circles::before {
     width: 600px;
@@ -490,8 +490,12 @@ footer a:hover {
     transform: translateY(-7px) rotate(-45deg);
 }
 
+.thumbnail-carousel {
+        display: none;
+    }
+
 /*  MOBILE  */
-@media (max-width: 800px) {
+@media (max-width: 880px) {
     nav {
         padding: 0 1.25rem;
     }
@@ -550,6 +554,10 @@ footer a:hover {
         font-size: 0.78rem;
         padding: 0.75rem 0.8rem;
         white-space: nowrap
+    }
+
+    .thumbnail-carousel {
+        display: none;
     }
 
 }
