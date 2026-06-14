@@ -29,7 +29,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/kontakt/challenge.php": "kontakt/challenge.php" });
   eleventyConfig.addPassthroughCopy({ "src/kontakt/senden.php":    "kontakt/senden.php"    });
   eleventyConfig.addPassthroughCopy("src/config/*"); // aufpassen wenn .html datei dazukommt
-  eleventyConfig.addPassthroughCopy("src/mail");
+  eleventyConfig.addPassthroughCopy("src/mail/*");
   eleventyConfig.addPassthroughCopy("src/phpmailer/*");  // aufpassen wenn .html datei dazukommt
 
   eleventyConfig.addWatchTarget("src/assets/css/");
