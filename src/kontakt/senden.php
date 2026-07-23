@@ -77,6 +77,12 @@ if (empty($name) || empty($email) || empty($nachricht)) {
     exit;
 }
 
+// Mindestlänge prüfen
+if (count(explode(" ",$nachricht )) < 5) {
+    header('Location: /kontakt/?fehler=nachricht');
+    exit;
+}
+
 // E-Mail validieren
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     header('Location: /kontakt/?fehler=email');

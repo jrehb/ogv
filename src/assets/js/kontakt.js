@@ -25,6 +25,8 @@ window.addEventListener('load', () => {
     el.innerHTML = '<p class="form-error">Bitte alle Felder ausfüllen.</p>';
   } else if (params.get('fehler') === 'email') {
     el.innerHTML = '<p class="form-error">Bitte eine gültige E-Mail-Adresse eingeben.</p>';
+  } else if (params.get('fehler') === 'nachricht') {
+    el.innerHTML = '<p class="form-error">Bitte gebe eine Nachricht ein, die länger als 5 Wörter ist.</p>';
   } else if (params.get('fehler') === 'server') {
     el.innerHTML = '<p class="form-error">Fehler beim Senden. Bitte direkt per E-Mail schreiben.</p>';
   }

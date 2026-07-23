@@ -1,1 +1,2 @@
-Redirect 301 / https://webmail.your-server.de/
+RewriteEngine On
+RewriteRule ^ https://webmail.your-server.de/ [R=301,L]
