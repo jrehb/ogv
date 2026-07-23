@@ -1,6 +1,17 @@
 RewriteEngine On
 
-# HTTPS + www erzwingen
+# --- EVENT 1: /kerb --- (Im optimal Fall nur Jahr erhöhen und Link abändern)
+RewriteCond %{TIME_YEAR}%{TIME_MON}%{TIME_DAY} <20260901
+RewriteRule ^kerb$ https://www.voluntira.com/event/BlqrkTFloM3QUyY [R=302,L]
+RewriteRule ^kerb$ /helferlink [R=302,L]
+
+# --- EVENT 2: /erntedankfest ---
+RewriteCond %{TIME_YEAR}%{TIME_MON}%{TIME_DAY} <20251001 
+RewriteRule ^erntedankfest$ https://www.voluntira.com/event/rX2kACgdwNI81g5 [R=302,L]
+RewriteRule ^erntedankfest$ /helferlink [R=302,L]
+
+# HTTPS + www erzwingen (ignoriert die mail-Subdomain)
+RewriteCond %{HTTP_HOST} !^mail\.ogv-kloppenheim\.de$ [NC]
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^www\.ogv-kloppenheim\.de$ [NC]
 RewriteRule ^ https://www.ogv-kloppenheim.de%{REQUEST_URI} [L,R=301]
