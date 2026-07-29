@@ -255,9 +255,50 @@
     border-color: #0bf;
   }
 }
+/* Play/Pause Button als Icon-Button auf dem Bild */
 .splide__toggle {
   cursor: pointer;
+  position: absolute;
+  bottom: 0.5em; /* Gleiche Höhe wie die Pagination-Punkte */
+  left: 1em;    /* An den linken Bildrand setzen */
+  z-index: 3;   /* Über dem Bild anzeigen */
+
+  /* Button-Styling als runder/diskreter Icon-Button */
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%; /* Macht den Button rund */
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
 }
+
+.splide__toggle:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Styling für die SVG-Grafiken im Button */
+.splide__toggle svg {
+  fill: #ffffff; /* Farbe der Icons (weiß) */
+  width: 1.1em;
+  height: 1.1em;
+}
+
+/* Zeige immer nur das jeweils relevante SVG an */
+.splide__toggle.is-active .splide__toggle__play,
+.splide__toggle:not(.is-active) .splide__toggle__pause {
+  display: none;
+}
+
+.splide__toggle.is-active .splide__toggle__pause,
+.splide__toggle:not(.is-active) .splide__toggle__play {
+  display: block;
+}
+/* Ende von Anpassung für Play/Pause Button
+ */
 .splide__toggle:focus-visible {
   outline: 3px solid #0bf;
   outline-offset: 3px;
