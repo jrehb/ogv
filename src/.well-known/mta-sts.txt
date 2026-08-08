@@ -1,0 +1,4 @@
+version: STSv1
+mode: enforce
+mx: www679.your-server.de
+max_age: 604800
