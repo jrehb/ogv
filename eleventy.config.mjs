@@ -32,6 +32,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/mail/*");
   eleventyConfig.addPassthroughCopy("src/kerb/*");
   eleventyConfig.addPassthroughCopy("src/phpmailer/*");  // aufpassen wenn .html datei dazukommt
+  eleventyConfig.addPassthroughCopy("src/.well-known/*")
 
   eleventyConfig.addWatchTarget("src/assets/css/");
   eleventyConfig.addWatchTarget("src/assets/js/");
