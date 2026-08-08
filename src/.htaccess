@@ -6,7 +6,7 @@ RewriteRule ^kerb$ https://www.voluntira.com/event/BlqrkTFloM3QUyY [R=302,L]
 RewriteRule ^kerb$ /helferlink [R=302,L]
 
 # --- EVENT 2: /erntedankfest ---
-RewriteCond %{TIME_YEAR}%{TIME_MON}%{TIME_DAY} <20251001 
+RewriteCond %{TIME_YEAR}%{TIME_MON}%{TIME_DAY} <20261001 
 RewriteRule ^erntedankfest$ https://www.voluntira.com/event/rX2kACgdwNI81g5 [R=302,L]
 RewriteRule ^erntedankfest$ /helferlink [R=302,L]
 
