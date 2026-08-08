@@ -30,7 +30,8 @@
       const nextBanner = valid[0];
 
       if (nextBanner) {
-        banner.src = nextBanner.file;
+        const cacheBuster = today.toISOString().slice(0, 10); // z.B. "2026-08-06"
+        banner.src = `${nextBanner.file}?v=${cacheBuster}`;
       }
     });
 })();
