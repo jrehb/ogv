@@ -1,34 +1,49 @@
 [
   {
-    "datum": "2026-03-16",
-    "uhrzeit": "19:00",
-    "titel": "Jahreshauptversammlung des OGV",
-    "beschreibung": "19:00 Uhr"
+    "datum": "2026-10-25",
+    "uhrzeit": "15:00",
+    "titel": "5. OGV-Kaffeekränzchen",
+    "beschreibung": "Weitere Infos folgen"
   },
   {
-    "datum": "2026-03-28",
-    "uhrzeit": "09:00",
-    "titel": "Pflegeaktion des Streuobstkreis Wiesbaden",
-    "beschreibung": "Pflegeaktion des Streuobstkreises Wiesbaden e.V. im Sortengarten Medenbach mit interessierten Mitgliedern. Hilfe ist erwünscht! Beginn 9.00 Uhr, Sortengarten des Streuobstkreises Wiesbaden e.V., an der Wildsachsener Strasse/BAB 3. Anmeldung unter E-Mail: <a href=\"mailto:ullikaiser@web.de\">ullikaiser@web.de</a>"
+    "datum": "2026-09-26",
+    "datum_ende": "2026-09-27",
+    "datum_anzeige": "26.09. - 27.09.2026",
+    "titel": "Erntedankfest Wiesbaden"
   },
   {
-    "datum": "2026-04-11",
-    "uhrzeit": "09:30",
-    "titel": "Pflegeaktion des Streuobstkreises Wiesbaden I",
-    "beschreibung": "Pflegeaktionen des Streuobstkreises Wiesbaden e.V. (wir teilen uns auf):<br><span class='text-bold'>- auf der Streuobstwiese der Diltheyschule an der Georg-August-Strasse. Beginn 9.30 Uhr</span><br>Hilfe ist erwünscht! Anmeldung unter E-Mail: <a href=\"mailto:ullikaiser@web.de\">ullikaiser@web.de</a>"
+    "datum": "2026-08-28",
+    "datum_ende": "2026-08-30",
+    "datum_anzeige": "28.08. - 30.08.2026",
+    "titel": "Kloppenheimer Kerb", 
+    "beschreibung" : "Wie jedes Jahr sind wir bei der Kloppenheimer Kerb dabei! Ihr findet unsere Stände oben rechts vor dem Dorfbrunnen. Wie immer gibt es unseren Äppler und Flammenkuchen (auch vegetarisch), zur Kinderbelustigung am Samstag bieten wir Waffeln an. Wir freuen uns auf euren Besuch!",
+    "filepath" : "/files/termine/2026-06-01_kerbeheft_2026.webp",
+    "buttonname" : "Flyer öffnen"
   },
   {
-    "datum": "2026-04-11",
-    "uhrzeit": "10:00",
-    "titel": "Pflegeaktion des Streuobstkreises Wiesbaden II",
-    "beschreibung": "Pflegeaktionen des Streuobstkreises Wiesbaden e.V. (wir teilen uns auf):<br><span class='text-bold'> - auf der Streuobstwiese der Firma Syracom AG an der Freudenberger Strasse. Beginn 10.00 Uhr </span><br>Hilfe ist erwünscht! Anmeldung unter E-Mail: <a href=\"mailto:ullikaiser@web.de\">ullikaiser@web.de</a>"
+    "datum": "2026-08-23",
+    "uhrzeit": "12:00",
+    "titel": "Sommerfest der Mitglieder des Streuobstkreis Wiesbaden",
+    "beschreibung": "Beginn: 12.00 Uhr. Gegrilltes, Salate, Apfelweine, Kaffee und Kuchen. Kuchenspenden werden dankend entgegengenommen. Eine Anmeldung ist dringend erforderlich unter <a href=\"tel:+4915118407904\">0151-18407904</a> oder per E-Mail: <a href=\"mailto:ullikaiser@web.de\">ullikaiser@web.de</a>"
   },
   {
-    "datum": "2026-04-14",
+    "datum": "2026-06-23",
     "uhrzeit": "19:00",
     "titel": "OGV-Stammtisch",
-    "beschreibung": "Ab 19:00 Uhr im Restaurant Poseidon",
-    "filepath" : "/files/termine/2026-04-08_stammtisch_flyer.webp",
+    "beschreibung": "Ab 19:00 Uhr im Restaurant Poseidon"
+  },
+  {
+    "datum": "2026-06-13",
+    "uhrzeit": "17:00",
+    "titel": "20. Apfelweinprobe im Ländchen",
+    "beschreibung": "Verkostung und Prämierung regionaler Apfelweine. Dazu gibt es natürlich etwas regional-typisches zu essen. Ein Unkostenbeitrag wird erhoben. Eine Anmeldung ist dringend erforderlich unter <a href=\"mailto:Apfelweinprobe@gmx.de\">Apfelweinprobe@gmx.de</a>. Im Innenhof in Engels Hofreite, In der Hofreite 21a, Wiesbaden-Medenbach. Beginn: 17.00 Uhr."
+  },
+  {
+    "datum": "2026-06-09",
+    "uhrzeit": "19:00",
+    "titel": "Vortrag von Nina &amp; Detlef Dittmann",
+    "beschreibung": "Multimedialer Vortrag mit Nina und Detlef Dittmann über Permakultur, naturnahe Lebensräume und nachhaltige Lebensweisen im Alltag und auf kleinen Flächen. Am Dienstag, 9. Juni 2026 um 19 Uhr (Einlass ab 18:30) im Gemeindehaus Kloppenheim (Pfarrstraße 6) - mit Bildern, praktischen Einblicken sowie anschließendem Austausch bei Äppler und Plausch.",
+    "filepath" : "/files/termine/2026-05-11_vortrag_dittmann_poster.webp",
     "buttonname" : "Flyer öffnen"
   },
   {
@@ -40,49 +55,36 @@
     "buttonname" : "Flyer öffnen"
   },
   {
-    "datum": "2026-06-09",
-    "uhrzeit": "19:00",
-    "titel": "Vortrag von Nina &amp; Detlef Dittmann",
-    "beschreibung": "Multimedialer Vortrag mit Nina und Detlef Dittmann über Permakultur, naturnahe Lebensräume und nachhaltige Lebensweisen im Alltag und auf kleinen Flächen. Am Dienstag, 9. Juni 2026 um 19 Uhr (Einlass ab 18:30) im Gemeindehaus Kloppenheim (Pfarrstraße 6) - mit Bildern, praktischen Einblicken sowie anschließendem Austausch bei Äppler und Plausch.",
-    "filepath" : "/files/termine/2026-05-11_vortrag_dittmann_poster.webp",
-    "buttonname" : "Flyer öffnen"
-  },
-  {
-    "datum": "2026-06-13",
-    "uhrzeit": "17:00",
-    "titel": "20. Apfelweinprobe im Ländchen",
-    "beschreibung": "Verkostung und Prämierung regionaler Apfelweine. Dazu gibt es natürlich etwas regional-typisches zu essen. Ein Unkostenbeitrag wird erhoben. Eine Anmeldung ist dringend erforderlich unter <a href=\"mailto:Apfelweinprobe@gmx.de\">Apfelweinprobe@gmx.de</a>. Im Innenhof in Engels Hofreite, In der Hofreite 21a, Wiesbaden-Medenbach. Beginn: 17.00 Uhr."
-  },
-  {
-    "datum": "2026-06-23",
+    "datum": "2026-04-14",
     "uhrzeit": "19:00",
     "titel": "OGV-Stammtisch",
-    "beschreibung": "Ab 19:00 Uhr im Restaurant Poseidon"
+    "beschreibung": "Ab 19:00 Uhr im Restaurant Poseidon",
+    "filepath" : "/files/termine/2026-04-08_stammtisch_flyer.webp",
+    "buttonname" : "Flyer öffnen",
+    "ki" : true
   },
   {
-    "datum": "2026-08-23",
-    "uhrzeit": "12:00",
-    "titel": "Sommerfest der Mitglieder des Streuobstkreis Wiesbaden",
-    "beschreibung": "Beginn: 12.00 Uhr. Gegrilltes, Salate, Apfelweine, Kaffee und Kuchen. Kuchenspenden werden dankend entgegengenommen. Eine Anmeldung ist dringend erforderlich unter <a href=\"tel:+4915118407904\">0151-18407904</a> oder per E-Mail: <a href=\"mailto:ullikaiser@web.de\">ullikaiser@web.de</a>"
+    "datum": "2026-04-11",
+    "uhrzeit": "10:00",
+    "titel": "Pflegeaktion des Streuobstkreises Wiesbaden II",
+    "beschreibung": "Pflegeaktionen des Streuobstkreises Wiesbaden e.V. (wir teilen uns auf):<br><span class='text-bold'> - auf der Streuobstwiese der Firma Syracom AG an der Freudenberger Strasse. Beginn 10.00 Uhr </span><br>Hilfe ist erwünscht! Anmeldung unter E-Mail: <a href=\"mailto:ullikaiser@web.de\">ullikaiser@web.de</a>"
   },
   {
-    "datum": "2026-08-28",
-    "datum_ende": "2026-08-30",
-    "datum_anzeige": "28.08. - 30.08.2026",
-    "titel": "Kloppenheimer Kerb", 
-    "beschreibung" : "Wie jedes Jahr sind wir bei der Kloppenheimer Kerb dabei! Ihr findet unsere Stände oben rechts vor dem Dorfbrunnen. Wie immer gibt es unseren Äppler und Flammenkuchen (auch vegetarisch), zur Kinderbelustigung am Samstag bieten wir Waffeln an. Wir freuen uns auf euren Besuch!"
+    "datum": "2026-04-11",
+    "uhrzeit": "09:30",
+    "titel": "Pflegeaktion des Streuobstkreises Wiesbaden I",
+    "beschreibung": "Pflegeaktionen des Streuobstkreises Wiesbaden e.V. (wir teilen uns auf):<br><span class='text-bold'>- auf der Streuobstwiese der Diltheyschule an der Georg-August-Strasse. Beginn 9.30 Uhr</span><br>Hilfe ist erwünscht! Anmeldung unter E-Mail: <a href=\"mailto:ullikaiser@web.de\">ullikaiser@web.de</a>"
   },
   {
-    "datum": "2026-09-26",
-    "datum_ende": "2026-09-27",
-    "datum_anzeige": "26.09. - 27.09.2026",
-    "titel": "Erntedankfest Wiesbaden"
+    "datum": "2026-03-28",
+    "uhrzeit": "09:00",
+    "titel": "Pflegeaktion des Streuobstkreis Wiesbaden",
+    "beschreibung": "Pflegeaktion des Streuobstkreises Wiesbaden e.V. im Sortengarten Medenbach mit interessierten Mitgliedern. Hilfe ist erwünscht! Beginn 9.00 Uhr, Sortengarten des Streuobstkreises Wiesbaden e.V., an der Wildsachsener Strasse/BAB 3. Anmeldung unter E-Mail: <a href=\"mailto:ullikaiser@web.de\">ullikaiser@web.de</a>"
   },
   {
-    "datum": "2026-10-25",
-    "uhrzeit": "15:00",
-    "titel": "5. OGV-Kaffeekränzchen",
-    "beschreibung": "Weitere Infos folgen"
+    "datum": "2026-03-16",
+    "uhrzeit": "19:00",
+    "titel": "Jahreshauptversammlung des OGV",
+    "beschreibung": "19:00 Uhr"
   }
-  
 ]
