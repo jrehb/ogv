@@ -1,0 +1,21 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: https://ogv-kloppenheim.de/kontakt
+Expires: 2027-02-01T11:00:00.000Z
+Preferred-Languages: de, en
+Canonical: https://ogv-kloppenheim.de/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEJV4IBhhGNhCiBt10rBe510UlVvAFAmp2/vcACgkQrBe510Ul
+VvCKXwwAmV7CtysMut+D0mvmUau2dOUM3mOjeHzX9Q03rHVsCObI4uBQhw7NoRjV
+cZ0aMSVW8oDSp0QGt0MdSXYLoKcBm1n+UOpfZ36SrQzltNofw31r0BrCrKYGoKaG
+8x8chkgd3TqsfT3oN6Vg86DBvgbJI1F6F/XeKDIaZtz7oSLkq5Ps424AZ0hCDWkJ
+6/0ELPjPg4+rl/B8Idi5DW69UdlBLrTZv3YRhiNbXgHRjJKjmrSaGn9Igv4IFISC
+n6bNwwu/EqRqffNAw/2y46K1JbcZuPHjISkXEOUtYizv0owQGe3T5Rf19cnBtT8G
+c/nq45UbQty0a6ehXArgT/B6Fccj53Jq8RlB8wdaMMa6HNDMmh109f/CnLfj7hKZ
+o2Q6DEzBMZRcvnIn9ehHTM4CJZow2Nd4+MIdA074zpIEgfnYIrKWy7RS5zioQ83w
+OA9xAl2wQuujnOSDR8KYbFCLzbHcCEr7MAqaV5wdWQa4QkmbMrATWOqRmh4lGc5z
+N5aXfXje
+=Lnlj
+-----END PGP SIGNATURE-----
