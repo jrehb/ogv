@@ -603,7 +603,7 @@ footer a:hover {
     /* Über-uns Hero Buttons: untereinander auf kleinen Screens */
     .hero ul {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         justify-items: center;
     }
 
