@@ -109,13 +109,16 @@
     <polyline points="21 15 16 10 5 21"></polyline>
   </svg>`;
 
-  function downloadButton(pfad, label) {
+  function downloadButton(pfad, label, ki) {
     if (!pfad) return "";
     const icon = istPdf(pfad) ? ICON_PDF : ICON_IMG;
     const fallbackLabel = istPdf(pfad) ? "PDF öffnen" : "Bild öffnen";
+    var kiLabel = "";
+    if (ki) {
+      kiLabel = " (KI Generiert)";
+    }
     return `<a class="btn-pdf" href="${pfad}" target="_blank" rel="noopener noreferrer">
-
-        ${icon}${label || fallbackLabel}
+        ${icon}${label || fallbackLabel}${kiLabel}
     </a>`;
   }
 
@@ -167,7 +170,7 @@
     </div>
     <p class="event-title">${event.titel}</p>
     ${desc}
-    ${downloadButton(event.filepath, event.buttonname)}
+    ${downloadButton(event.filepath, event.buttonname, event.ki)}
 `;
       if (!zeigeVergangene) {
         li.querySelector(".btn-ical").addEventListener("click", () => icalDownload(event));

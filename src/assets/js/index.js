@@ -1,11 +1,13 @@
 (function () {
   const doc = document;
   const banner = doc.getElementById("banner");
+  const aiLabel = doc.getElementById("ai-label");
 
   fetch("/data/index_banner.json")
     .then((r) => r.json())
     .then((banners) => {
       if (!banners.length) {
+        aiLabel.style.display = "none";
         return;
       }
 
@@ -32,6 +34,11 @@
       if (nextBanner) {
         const cacheBuster = today.toISOString().slice(0, 10); // z.B. "2026-08-06"
         banner.src = `${nextBanner.file}?v=${cacheBuster}`;
+        if (nextBanner.ai) {
+          aiLabel.style.display = "flex";
+        } else {
+          aiLabel.style.display = "none";
+        }
       }
     });
 })();

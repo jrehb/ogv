@@ -308,6 +308,38 @@ section .btn-toggle-past:hover {
     margin-bottom: 0;
 }
 
+.ai-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.ai-label {
+    position: absolute;
+    color: var(--warm-white);
+    background-color: var(--green-mid);
+    width: 100px;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    right: 0px;
+    bottom: -20px;
+}
+
+.ai-container a {
+  display: inline-block;
+  justify-self: center;
+  border-radius: 10px;
+  height: fit-content;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ai-container a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
 /*  QUOTE BAND  (auskommentiert – bei Bedarf einkommentieren)
 .quote-band {
     background: var(--green-dark);
