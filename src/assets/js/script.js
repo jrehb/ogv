@@ -99,4 +99,10 @@
         mq.addEventListener("change", updateToc);
         updateToc();
     }
+
+    // ── Cookie Hint ───────────────────────────────────────────
+    const cookieHint = document.querySelector('.cookie-hint');
+    cookieHint.addEventListener('click', () => {
+    cookieHint.classList.toggle('expanded');
+});
 })();

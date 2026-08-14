@@ -327,17 +327,57 @@ section .btn-toggle-past:hover {
 }
 
 .ai-container a {
-  display: inline-block;
-  justify-self: center;
-  border-radius: 10px;
-  height: fit-content;
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+    justify-self: center;
+    border-radius: 10px;
+    height: fit-content;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .ai-container a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cookie-hint {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    opacity: 65%;
+    background-color: var(--green-mid);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 2.5px;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+.cookie-hint.expanded {
+    width: 320px;
+    opacity: 100%;
+}
+
+.cookie-hint-svg {
+    flex-shrink: 0;
+}
+
+.cookie-hint-svg path {
+    fill: var(--cream);
+}
+
+.cookie-text {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: var(--cream);
+    font-family: sans-serif;
+    flex-shrink: 0;
 }
 
 /*  QUOTE BAND  (auskommentiert – bei Bedarf einkommentieren)
