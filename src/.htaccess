@@ -2,19 +2,28 @@ RewriteEngine On
 
 # --- EVENT 1: /kerb --- (Im optimal Fall nur Jahr erhöhen und Link abändern)
 RewriteCond %{TIME_YEAR}%{TIME_MON}%{TIME_DAY} <20260901
-RewriteRule ^kerb$ https://www.voluntira.com/event/BlqrkTFloM3QUyY [R=302,L]
-RewriteRule ^kerb$ /helferlink [R=302,L]
+RewriteRule ^kerb/?$ https://www.voluntira.com/event/BlqrkTFloM3QUyY [R=302,L]
+RewriteRule ^kerb/?$ /helferlink [R=302,L]
 
 # --- EVENT 2: /erntedankfest ---
 RewriteCond %{TIME_YEAR}%{TIME_MON}%{TIME_DAY} <20261001 
-RewriteRule ^erntedankfest$ https://www.voluntira.com/event/rX2kACgdwNI81g5 [R=302,L]
-RewriteRule ^erntedankfest$ /helferlink [R=302,L]
+RewriteRule ^erntedankfest/?$ https://www.voluntira.com/event/rX2kACgdwNI81g5 [R=302,L]
+RewriteRule ^erntedankfest/?$ /helferlink [R=302,L]
 
 # HTTPS + www erzwingen (ignoriert die mail-Subdomain)
 RewriteCond %{HTTP_HOST} !^mail\.ogv-kloppenheim\.de$ [NC]
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^www\.ogv-kloppenheim\.de$ [NC]
 RewriteRule ^ https://www.ogv-kloppenheim.de%{REQUEST_URI} [L,R=301]
+
+# Temporärer Redirect bis google die seite entfernt
+RewriteRule ^veranstaltungen/?$ /termine [R=301,L,QSA]
+
+ErrorDocument 400 /error/400/
+ErrorDocument 401 /error/401/
+ErrorDocument 403 /error/403/
+ErrorDocument 404 /error/404/
+ErrorDocument 500 /error/500/
 
 # Logs sperren
 <FilesMatch "\.log$">

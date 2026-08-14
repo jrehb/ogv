@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /helferlink
+Disallow: /error/
 
 # Link zur Sitemap (Wichtig für Google)
 Sitemap: https://www.ogv-kloppenheim.de/sitemap.xml
