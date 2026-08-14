@@ -42,10 +42,10 @@ npm install
 Lokalen Entwicklungsserver starten (mit Hot-Reload):
 
 ```bash
-npm run dev
+npm run dev-net
 ```
 
-Die Website ist dann, solange port 8080 nicht belegt ist, unter [http://localhost:8080](http://localhost:8080) erreichbar, sowie im lokalen Netzwerk unter der Ip-Adresse des gehosteten Gerätes. Ist letzeres unerwünschtes verhalten, so muss die eleventy.config.mjs geändert werden. Für den aktuellen Port beachte Terminal output.
+Die Website ist dann, solange port 8090 nicht belegt ist, unter [http://localhost:8090](http://localhost:8090) erreichbar, sowie im lokalen Netzwerk unter der Ip-Adresse des gehosteten Gerätes. Ist letzeres unerwünschtes verhalten, so reicht der Befehl `npm run dev`. Für den aktuellen Port beachte Terminal output.
 
 ---
 
@@ -57,7 +57,7 @@ Fertige Website für den Server generieren:
 npm run build
 ```
 
-Der fertige `_site/`-Ordner wird komplett neu erstellt und kann direkt auf den Server hochgeladen werden.
+Der fertige `_site/`-Ordner wird komplett neu erstellt und kann direkt auf den Server hochgeladen werden. Mit `npm run fast` wird nur das geupdated, was neu ist.
 
 ---
 
