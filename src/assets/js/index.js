@@ -2,6 +2,7 @@
   const doc = document;
   const banner = doc.getElementById("banner");
   const aiLabel = doc.getElementById("ai-label");
+  const divBanner = doc.getElementById("div-banner");
 
   fetch("/data/index_banner.json")
     .then((r) => r.json())
@@ -39,6 +40,8 @@
         } else {
           aiLabel.style.display = "none";
         }
+      } else {
+          divBanner.style.display = "none";
       }
     });
 })();
