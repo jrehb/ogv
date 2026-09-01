@@ -103,6 +103,61 @@
     // ── Cookie Hint ───────────────────────────────────────────
     const cookieHint = document.querySelector('.cookie-hint');
     cookieHint.addEventListener('click', () => {
-    cookieHint.classList.toggle('expanded');
-});
+        cookieHint.classList.toggle('expanded');
+    });
+
+    // Footer aktuelles Jahr
+    const footerYear = document.getElementById("footer-year");
+    footerYear.innerText = new Date().getFullYear();
+    
+
+    // ── Shortcut Keys ───────────────────────────────────────────
+    document.addEventListener('keydown', function(e){
+
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) {
+            return; 
+        }
+
+        if (e.key === 's') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/"
+        } else if (e.key === 'u') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/ueber-uns/"            
+        } else if (e.key === 't') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/termine/"            
+        } else if (e.key === 'p') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/presse/"            
+        } else if (e.key === 'a') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/aktivitaeten/"            
+        } else if (e.key === 'f') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/fallobst/"            
+        } else if (e.key === 'k') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/kontakt/"            
+        } else if (e.key === 'i') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/impressum/"            
+        } else if (e.key === 'd') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/datenschutz/"            
+        } else if (e.key === 'h') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/ueber-uns/historie/"            
+        } else if (e.key === 'm') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/ueber-uns/mitglied-werden/"            
+        } else if (e.key === 'r') {
+            e.preventDefault();
+            window.location.href = "https://ogv-kloppenheim.de/ueber-uns/satzung/"            
+        } else if (e.key === 'c') {
+            e.preventDefault();
+            cookieHint.classList.toggle('expanded');
+        }
+        
+    })
 })();
