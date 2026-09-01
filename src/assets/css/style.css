@@ -344,6 +344,7 @@ section .btn-toggle-past:hover {
     width: 40px;
     height: 40px;
     border-radius: 20px;
+    z-index: 10;
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -362,6 +363,13 @@ section .btn-toggle-past:hover {
 .cookie-hint.expanded {
     width: 320px;
     opacity: 100%;
+}
+
+@media (hover: hover) {
+    .cookie-hint:hover {
+    width: 320px;
+    opacity: 100%;
+}
 }
 
 .cookie-hint-svg {
