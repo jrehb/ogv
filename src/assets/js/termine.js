@@ -126,7 +126,11 @@
     list.innerHTML = "";
 
     const gefiltert = events.filter((e) => {
-      const d = new Date(e.datum);
+      var d = new Date(e.datum);
+      if (e.datum_ende) {
+        d = new Date(e.datum_ende);
+      }
+
       return zeigeVergangene ? d < heute : d >= heute;
     });
 
