@@ -118,6 +118,8 @@
             return; 
         }
 
+        if (e.ctrlKey || e.metaKey || e.altKey) return;
+
         if (e.key === 's') {
             e.preventDefault();
             window.location.href = "https://ogv-kloppenheim.de/"
