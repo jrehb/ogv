@@ -1,9 +1,33 @@
 <?php
 $debug = false; // ← auf true setzen zum Debuggen
+
+/*
+    Hilfsfunktion für Antworten (JSON bei Fetch, Header-Redirect als Fallback)
+*/
+function respond($success, $message, $redirectUrl) {
+    $isAjax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest')
+              || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false);
+
+    if ($isAjax) {
+        header('Content-Type: application/json; charset=utf-8');
+        if (!$success) {
+            http_response_code(400);
+        }
+        echo json_encode(['success' => $success, 'message' => $message]);
+        exit;
+    } else {
+        header('Location: ' . $redirectUrl);
+        exit;
+    }
+}
+
 /*
     Altcha-Payload
 */
-define('ALTCHA_HMAC_KEY', 'da03fee65e614a0a0dfb63655342c52e3c67971ac42fc1bdaa47fef56a3d9049'); // Gleicher Key!
+// Config laden
+$config = require __DIR__ . '/../config/mail_config.php';
+
+define('ALTCHA_HMAC_KEY', $config['altcha_key'] ?? '');
 
 function verifyAltcha(string $payload): bool {
     $decoded = json_decode(base64_decode($payload), true);
@@ -30,23 +54,18 @@ function verifyAltcha(string $payload): bool {
     return hash_equals($expectedSignature, $signature);
 }
 
-$altchaPayload = $_POST['altcha'] ?? '';
-if (!verifyAltcha($altchaPayload)) {
-    http_response_code(400);
-    die('ALTCHA-Verifizierung fehlgeschlagen.');
-}
-
-/*
-    E-Mail Versand
-*/
-
 if ($debug) {
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
 }
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /kontakt/');
-    exit;
+    respond(false, 'Ungültige Anfrage.', '/kontakt/');
+}
+
+$altchaPayload = $_POST['altcha'] ?? '';
+if (!verifyAltcha($altchaPayload)) {
+    respond(false, 'ALTCHA-Verifizierung fehlgeschlagen.', '/kontakt/?fehler=altcha');
 }
 
 // PHPMailer einbinden
@@ -54,16 +73,12 @@ require __DIR__ . '/../phpmailer/PHPMailer.php';
 require __DIR__ . '/../phpmailer/SMTP.php';
 require __DIR__ . '/../phpmailer/Exception.php';
 
-// Config laden (im config-Ordner, z.B. /public_html/config/mail_config.php)
-$config = require __DIR__ . '/../config/mail_config.php';
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Wenn Honeypot ausgefüllt → Bot
 if (!empty($_POST['website'])) {
-    header('Location: /kontakt/?erfolg=1'); // Bot denkt es hat geklappt
-    exit;
+    respond(true, 'Nachricht gesendet!', '/kontakt/?erfolg=1');
 }
 
 // POST-Daten bereinigen
@@ -73,20 +88,17 @@ $nachricht = trim(strip_tags($_POST['nachricht'] ?? ''));
 
 // Pflichtfelder prüfen
 if (empty($name) || empty($email) || empty($nachricht)) {
-    header('Location: /kontakt/?fehler=leer');
-    exit;
+    respond(false, 'Bitte alle Felder ausfüllen.', '/kontakt/?fehler=leer');
 }
 
 // Mindestlänge prüfen
-if (count(explode(" ",$nachricht )) < 5) {
-    header('Location: /kontakt/?fehler=nachricht');
-    exit;
+if (count(explode(" ", $nachricht)) < 5) {
+    respond(false, 'Bitte geben Sie eine Nachricht ein, die länger als 5 Wörter ist.', '/kontakt/?fehler=nachricht');
 }
 
 // E-Mail validieren
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header('Location: /kontakt/?fehler=email');
-    exit;
+    respond(false, 'Bitte eine gültige E-Mail-Adresse eingeben.', '/kontakt/?fehler=email');
 }
 
 try {
@@ -100,30 +112,26 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = '587';
 
-    $mail->setFrom($config['from'], 'OGV Kloppenheim'); // Absender-Adresse + Name
-    $mail->addReplyTo($email, $name);                   // Nutzerantwort
-    $mail->addAddress($config['to']);                   // Empfänger
+    $mail->setFrom($config['from'], 'OGV Kloppenheim');
+    $mail->addReplyTo($email, $name);
+    $mail->addAddress($config['to']);
 
     $mail->CharSet = 'UTF-8';
     $mail->Subject = 'Kontaktanfrage von ' . $name;
     $mail->Body    = "Name: $name\nE-Mail: $email\n\nNachricht:\n$nachricht";
 
-    // Debugging aktivieren (alles in mail_debug.log)
     $mail->SMTPDebug = 2;
     $mail->Debugoutput = function($str, $level) {
         file_put_contents(__DIR__ . '/mail_debug.log', date('Y-m-d H:i:s') . " [$level] $str\n", FILE_APPEND);
     };
 
     $mail->send();
-    header('Location: /kontakt/?erfolg=1');
+    respond(true, 'Nachricht erfolgreich gesendet!', '/kontakt/?erfolg=1');
 
 } catch (Exception $e) {
     if ($debug) {
         $info = isset($mail) ? $mail->ErrorInfo : $e->getMessage();
         file_put_contents(__DIR__ . '/mail_debug.log', date('Y-m-d H:i:s') . ' [Exception] ' . $info . "\n", FILE_APPEND);
-        die('Fehler: ' . $info);
     }
-    header('Location: /kontakt/?fehler=server');
+    respond(false, 'Fehler beim Senden. Bitte versuchen Sie es später erneut.', '/kontakt/?fehler=server');
 }
-
-exit;

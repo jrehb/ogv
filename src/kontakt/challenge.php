@@ -2,7 +2,10 @@
 header('Content-Type: application/json');
 header('Cache-Control: no-store');
 
-define('ALTCHA_HMAC_KEY', 'da03fee65e614a0a0dfb63655342c52e3c67971ac42fc1bdaa47fef56a3d9049'); // Zufälligen langen String einsetzen!
+// Config laden
+$config = require __DIR__ . '/../config/mail_config.php';
+
+define('ALTCHA_HMAC_KEY', $config['altcha_key'] ?? ''); 
 
 $algorithm = 'SHA-256';
 $maxNumber = 100000;
